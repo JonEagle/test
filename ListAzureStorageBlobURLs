@@ -1,0 +1,3 @@
+List all contents of an Azure storage blob
+
+curl.exe '{storageaccount}.blob.core.windows.net/{storageblob}?restype=container&comp=list}' | select-string '(?<=<Url>)(.*?)(?=<\/Url>)' -AllMatches | % { $_.Matches } | % {$_.Value}
