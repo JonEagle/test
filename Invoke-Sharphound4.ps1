@@ -11,3 +11,4 @@ function Invoke-SharpHound4
     $decompressed = New-Object IO.Compression.GzipStream($a,[IO.Compression.CoMPressionMode]::DEComPress)
     $output = New-Object System.IO.MemoryStream
     $decompressed.CopyTo( $output )
+    [byte[]] $byteOutArray = $output.ToArray()
