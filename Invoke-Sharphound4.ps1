@@ -12,8 +12,7 @@ function Invoke-SharpHound4
     $output = New-Object System.IO.MemoryStream
     $decompressed.CopyTo( $output )
     [byte[]] $byteOutArray = $output.ToArray()
-    $la = [System.Reflection.Assembly]::Load($byteOutArray)
-
+    $ra = [System.Reflection.Assembly]::Load($byteOutArray)
 
     $OldConsoleOut = [Console]::Out
     $StringWriter = New-Object IO.StringWriter
