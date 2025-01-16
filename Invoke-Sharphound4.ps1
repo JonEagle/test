@@ -1,1 +1,1 @@
-test
+function Invoke-SharpHound4
